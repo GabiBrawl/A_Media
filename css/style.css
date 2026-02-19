@@ -1,0 +1,86 @@
+/* CSS Variables */
+:root {
+    --primary-color: #FFC5D3;
+    --secondary-color: #99606E;
+    --dark-color: #662C39;
+
+    --font-family: 'Arial', sans-serif;
+    --font-size-base: 16px;
+    --line-height-base: 1.6;
+
+    --border-radius: 5px;
+    --box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--primary-color);
+    min-height: 100vh;
+}
+
+.container {
+    min-height: 100vh;
+    max-width: 1750px;
+    margin: 0 auto;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: var(--secondary-color);
+    padding: var(--spacing-lg);
+    border-right: 7px solid var(--dark-color);
+    color: var(--primary-color);
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+
+.sidebar h1 {
+    margin-bottom: var(--spacing-lg);
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin-bottom: var(--spacing-sm);
+}
+
+.sidebar nav ul li a {
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: var(--spacing-sm) var(--spacing-md);
+    display: block;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+main {
+    margin-left: 250px;
+    padding: var(--spacing-xl);
+    background-color: white;
+    min-height: 100vh;
+}

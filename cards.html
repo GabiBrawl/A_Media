@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Card</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/card.css">
+</head>
+<body>
+    <div class="product-card">
+        <div class="product-inner">
+    <div class="image-container">
+        <img src="favicon.ico" alt="Product Image" class="product-image">
+
+        <!-- Responsive SVG overlay shape (preserveAspectRatio="none" makes it stretch to container) -->
+        <div class="overlay">
+            <svg class="overlay-shape" viewBox="0 0 177 89" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M-2 0C23.4125 9.49346 54.6816 15.0937 88.4941 15.0938C121.43 15.0938 151.953 9.7799 177 0.730469V88.417H-2V0Z" fill="#662C39" />
+            </svg>
+
+            <!-- content placed on top of the SVG shape -->
+            <div class="overlay-content">
+                <h3 class="product-title">Product Title</h3>
+                <div class="product-price">$29.99</div>
+                <div class="buttons">
+                    <button class="add-to-cart">Open</button>
+                    <button class="wishlist">i</button>
+                    <button class="share">i</button>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</body>
+</html>

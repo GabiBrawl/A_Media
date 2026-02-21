@@ -1,0 +1,119 @@
+/* Product Card Styles */
+.product-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* 4px bezel around the inner card to reveal page background */
+    padding: 4px;
+    border-radius: 12px;
+    background: transparent;
+    overflow: visible;
+}
+
+.image-container {
+    --overlay-height: 42%; /* adjustable overlay height */
+    --peek: 75px; /* how much of the image peeks below the curve */
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.product-inner {
+    /* inner surface that gets the gradient and shadow */
+    position: absolute;
+    inset: 4px; /* match bezel padding */
+    background: linear-gradient(to bottom, #FAC0CE, #9E6573);
+    border-radius: 8px; /* 12 - 4 to match outer radius minus bezel */
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.product-image {
+    width: 100%;
+    /* stop the image where the overlay starts, allow a small peek */
+    height: calc(100% - var(--overlay-height) + var(--peek));
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: var(--overlay-height);
+    overflow: visible;
+    z-index: 2;
+}
+
+.overlay-shape {
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.overlay-content {
+    position: absolute;
+    bottom: 6px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #FFC5D3;
+    padding: 8px 12px;
+    box-sizing: border-box;
+    text-align: center;
+    pointer-events: none; /* keep svg buttons clickable only if desired */
+}
+
+.overlay-content .buttons { pointer-events: auto; }
+
+.product-title {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #FFC5D3;
+}
+
+.product-price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #FFC5D3;
+    margin-bottom: 10px;
+}
+
+.buttons {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+}
+
+.add-to-cart, .wishlist, .share {
+    background: #FFC5D3;
+    color: #662C39;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.add-to-cart {
+    flex: 1;
+    padding: 5px 10px;
+}
+
+.wishlist, .share {
+    width: 30px;
+    height: 20px;
+    padding: 0;
+}
+
+.add-to-cart:hover, .wishlist:hover, .share:hover {
+    background: rgba(255, 197, 211, 0.8);
+}

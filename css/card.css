@@ -1,12 +1,21 @@
 /* Product Card Styles */
 .product-card {
+    --card-gradient-top: #9E6573;
+    --card-gradient-bottom: #FAC0CE;
+    --card-text-color: #662C39;
+    --card-overlay-color: #FFC5D3;
+    --card-border-color: #662C39;
+    --card-button-bg: #662C39;
+    --card-button-fg: #FFC5D3;
+    --card-button-hover-bg: rgba(102, 44, 57, 0.85);
+
     position: relative;
     width: 100%;
     height: 100%;
-    /* 4px bezel around the inner card to reveal page background */
+    /* 4px bezel around the inner card */
     padding: 4px;
     border-radius: 12px;
-    background: transparent;
+    background: var(--card-border-color);
     overflow: visible;
 }
 
@@ -22,10 +31,17 @@
     /* inner surface that gets the gradient and shadow */
     position: absolute;
     inset: 4px; /* match bezel padding */
-    background: linear-gradient(to bottom, #FAC0CE, #9E6573);
+    background: linear-gradient(to bottom, var(--card-gradient-top), var(--card-gradient-bottom));
     border-radius: 8px; /* 12 - 4 to match outer radius minus bezel */
     overflow: hidden;
     box-shadow: var(--box-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.product-inner:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
 }
 
 .product-image {
@@ -36,6 +52,8 @@
     position: absolute;
     top: 0;
     left: 0;
+    /* fallback background if image fails to load */
+    background-color: var(--card-gradient-top);
 }
 
 .overlay {
@@ -57,6 +75,26 @@
     display: block;
 }
 
+.overlay-shape path {
+    fill: #b67485;
+}
+
+.product-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--card-button-bg);
+    color: var(--card-button-fg);
+    font-size: 0.68rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 3px 8px;
+    border-radius: 4px;
+    z-index: 3;
+    pointer-events: none;
+}
+
 .overlay-content {
     position: absolute;
     bottom: 6px;
@@ -64,56 +102,76 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    color: #FFC5D3;
+    align-items: stretch;
+    color: var(--card-overlay-color);
     padding: 8px 12px;
     box-sizing: border-box;
-    text-align: center;
+    text-align: left;
     pointer-events: none; /* keep svg buttons clickable only if desired */
 }
 
 .overlay-content .buttons { pointer-events: auto; }
 
+.product-meta {
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+    min-width: 0;
+    margin-bottom: 8px;
+}
+
 .product-title {
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-    color: #FFC5D3;
+    flex: 1;
+    min-width: 0;
+    font-size: 1.35rem;
+    margin-bottom: 0;
+    color: #f0f0f0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .product-price {
-    font-size: 1.1rem;
+    flex-shrink: 0;
+    font-size: 1.25rem;
     font-weight: bold;
-    color: #FFC5D3;
-    margin-bottom: 10px;
+    color: #f0f0f0;
+    margin-bottom: 0;
 }
 
 .buttons {
     display: flex;
-    gap: 4px;
+    gap: 6px;
     justify-content: center;
+    align-items: stretch;
 }
 
 .add-to-cart, .wishlist, .share {
-    background: #FFC5D3;
-    color: #662C39;
+    background: var(--card-button-bg);
+    color: var(--card-button-fg);
     border: none;
     border-radius: 8px;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: bold;
     cursor: pointer;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .add-to-cart {
     flex: 1;
-    padding: 5px 10px;
+    padding: 0 12px;
 }
 
 .wishlist, .share {
-    width: 30px;
-    height: 20px;
+    width: 34px;
     padding: 0;
 }
 
 .add-to-cart:hover, .wishlist:hover, .share:hover {
-    background: rgba(255, 197, 211, 0.8);
+    background: var(--card-button-hover-bg);
 }

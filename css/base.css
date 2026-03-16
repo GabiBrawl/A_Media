@@ -37,4 +37,17 @@ body {
     min-height: 100vh;
     max-width: 1750px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    body {
+        height: auto;
+    }
+
+    .container {
+        flex-direction: column;
+    }
 }

@@ -204,3 +204,116 @@
     line-height: 1.5;
     font-style: italic;
 }
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: var(--spacing-md);
+        border-right: none;
+        border-bottom: 5px solid var(--dark-color);
+        overflow-y: visible;
+    }
+
+    .sidebar-shell {
+        min-height: auto;
+        gap: var(--spacing-md);
+    }
+
+    .sidebar-logo {
+        width: 64px;
+        height: 64px;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .sidebar-head {
+        padding: var(--spacing-sm);
+    }
+
+    .sidebar-title {
+        font-size: 1.3rem;
+        margin-top: 0;
+    }
+
+    .sidebar-subtitle {
+        font-size: 0.8rem;
+        display: none;
+    }
+
+    .sidebar-nav {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .sidebar-nav-item {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .sidebar-workspace {
+        padding: var(--spacing-sm);
+    }
+
+    .workspace-header h2 {
+        font-size: 0.95rem;
+    }
+
+    .workspace-header p {
+        font-size: 0.8rem;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .filter-label {
+        font-size: 0.8rem;
+    }
+
+    .filter-control,
+    .filter-reset-button {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+
+    .sidebar-source {
+        padding: var(--spacing-sm);
+    }
+
+    .sidebar-source-label {
+        font-size: 0.65rem;
+    }
+
+    .sidebar-source-text {
+        font-size: 0.75rem;
+    }
+
+    .sidebar-foot {
+        padding: var(--spacing-sm);
+    }
+
+    .sidebar-foot-label {
+        font-size: 0.65rem;
+    }
+
+    .sidebar-quote-text {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 530px) {
+    .sidebar-title {
+        font-size: 1.1rem;
+    }
+
+    .sidebar-logo {
+        width: 56px;
+        height: 56px;
+    }
+
+    .sidebar-nav {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar-nav-item {
+        padding: 10px;
+    }
+}

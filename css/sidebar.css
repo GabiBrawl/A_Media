@@ -1,0 +1,206 @@
+/* Sidebar */
+.sidebar {
+    width: 320px;
+    background-color: var(--secondary-color);
+    padding: var(--spacing-md);
+    border-right: 5px solid var(--dark-color);
+    color: var(--surface-color);
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+
+.sidebar-shell {
+    width: 100%;
+    min-height: calc(100vh - (var(--spacing-md) * 2));
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.sidebar-logo {
+    width: 96px;
+    height: 96px;
+    display: block;
+    margin: 0 auto;
+    box-shadow: var(--box-shadow);
+}
+
+.sidebar-head {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    padding: var(--spacing-md);
+}
+
+.sidebar-title {
+    margin-top: var(--spacing-xs);
+    font-size: 1.6rem;
+    line-height: 1.2;
+}
+
+.sidebar-subtitle {
+    margin-top: var(--spacing-sm);
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.sidebar-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-sm);
+}
+
+.sidebar-nav-item {
+    color: var(--sidebar-text-color);
+    text-decoration: none;
+    text-align: center;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px;
+    border-radius: 12px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.sidebar-nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.sidebar-workspace {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    padding: var(--spacing-md);
+}
+
+.workspace-header h2 {
+    font-size: 1.05rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.workspace-header p {
+    font-size: 0.85rem;
+    opacity: 0.9;
+    margin-bottom: var(--spacing-sm);
+}
+
+.filter-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+}
+
+.filter-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.filter-control,
+.filter-reset-button {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.14);
+    color: var(--sidebar-text-color);
+}
+
+.filter-control::placeholder {
+    color: var(--sidebar-text-muted);
+}
+
+.filter-control option {
+    color: var(--dark-color);
+}
+
+.filter-check {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 0.9rem;
+    margin-top: var(--spacing-xs);
+}
+
+.filter-check input {
+    width: 16px;
+    height: 16px;
+}
+
+.filter-reset-button {
+    cursor: pointer;
+    font-weight: 700;
+    margin-top: var(--spacing-xs);
+}
+
+.filter-reset-button:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.sidebar-source {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: var(--spacing-sm) var(--spacing-md);
+}
+
+.sidebar-source-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+    opacity: 0.85;
+}
+
+.sidebar-source-text {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    opacity: 0.9;
+}
+
+.sidebar-source-text a {
+    color: var(--sidebar-text-color);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(238, 237, 217, 0.5);
+    transition: border-color 0.2s ease;
+}
+
+.sidebar-source-text a:hover {
+    border-bottom-color: var(--sidebar-text-color);
+}
+
+.sidebar-foot {
+    margin-top: auto;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: 12px;
+    background: rgba(102, 44, 57, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    opacity: 0.95;
+}
+
+.sidebar-foot-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+    opacity: 0.9;
+}
+
+.sidebar-quote-text {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    font-style: italic;
+}

@@ -133,7 +133,7 @@ main {
     .card-wrapper {
         flex: 1 1 100%;
         max-width: 100%;
-        height: clamp(200px, 50vw, 280px);
+        height: clamp(360px, 50vw, 280px);
     }
 
     .cards-row {

@@ -120,10 +120,7 @@ function createProductCard(product) {
 
     // Optional badge
     if (product.pick) {
-        const badge = document.createElement('span');
-        badge.className = 'product-badge';
-        badge.textContent = 'Pick';
-        inner.appendChild(badge);
+        card.classList.add('is-pick');
     }
 
     // Image container

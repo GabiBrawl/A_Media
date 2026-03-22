@@ -13,14 +13,15 @@
             <div class="sidebar-shell">
                 <header class="sidebar-head" aria-label="Brand panel">
                     <img src="assets/logo.png" alt="A_Media logo" class="sidebar-logo">
-                    <h1 class="sidebar-title">A_Media</h1>
-                    <p class="sidebar-subtitle">Curated tools and resources in one place.</p>
                 </header>
 
                 <nav class="sidebar-nav" aria-label="Primary navigation">
+                    <a href="https://linktr.ee/A_Media" class="sidebar-nav-item" target="_blank" rel="noopener noreferrer">Linktree</a>
                     <a href="mailto:whitebelttakes@gmail.com" class="sidebar-nav-item">Email</a>
                     <a href="https://www.tiktok.com/@aiden_holmquist" class="sidebar-nav-item" target="_blank" rel="noopener noreferrer">TikTok</a>
                 </nav>
+
+                <div id="sidebar-mobile-anchor" aria-hidden="true"></div>
 
                 <section class="sidebar-workspace" aria-label="Product filters">
                     <div class="workspace-header">
@@ -61,11 +62,6 @@
                     </div>
                 </section>
 
-                <section class="sidebar-source" aria-label="Data source info">
-                    <p class="sidebar-source-label">Data sourced from</p>
-                    <p class="sidebar-source-text"><a href="https://linktr.ee/A_Media" target="_blank" rel="noopener noreferrer">linktr.ee/A_Media</a></p>
-                </section>
-
                 <footer class="sidebar-foot" aria-label="Quote of the moment">
                     <p class="sidebar-foot-label">Quote of the moment</p>
                     <blockquote id="sidebar-quote" class="sidebar-quote-text"></blockquote>
@@ -73,9 +69,32 @@
             </div>
         </aside>
         <main>
+            <section class="mobile-top" aria-label="Mobile brand and links">
+                <img src="assets/logo.png" alt="A_Media logo" class="mobile-top-logo">
+                <div id="mobile-quote-slot" class="mobile-quote-slot" aria-label="Mobile quote location"></div>
+                <nav class="mobile-top-nav" aria-label="Mobile social links">
+                    <a href="https://linktr.ee/A_Media" class="mobile-top-link" target="_blank" rel="noopener noreferrer">Linktree</a>
+                    <a href="mailto:whitebelttakes@gmail.com" class="mobile-top-link">Email</a>
+                    <a href="https://www.tiktok.com/@aiden_holmquist" class="mobile-top-link" target="_blank" rel="noopener noreferrer">TikTok</a>
+                </nav>
+
+                <section class="mobile-filters" aria-label="Mobile filters panel">
+                    <button id="mobile-filters-toggle" class="mobile-filters-toggle" type="button" aria-expanded="false" aria-controls="mobile-filters-panel">Filters</button>
+                    <div id="mobile-filters-panel" class="mobile-filters-panel" hidden></div>
+                </section>
+            </section>
+
+            <header class="main-title-block" aria-label="Catalog title">
+                <h1 class="main-title">A_Media recommendation catalog</h1>
+            </header>
+
             <section class="card-grid">
                 <div id="product-grid"></div>
                 <p id="empty-state" class="empty-state" hidden>No products match the selected filters.</p>
+            </section>
+
+            <section class="main-source" aria-label="Data source info">
+                <p class="main-source-line">Data sourced from <a href="https://linktr.ee/A_Media" target="_blank" rel="noopener noreferrer">linktr.ee/A_Media</a></p>
             </section>
         </main>
     </div>
@@ -84,6 +103,7 @@
     <script src="js/card.js"></script>
     <script src="js/quotes.js"></script>
     <script src="js/filters.js"></script>
+    <script src="js/mobile_layout.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>

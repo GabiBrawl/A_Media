@@ -95,20 +95,24 @@
     fill: #b67485;
 }
 
-.product-badge {
+.product-card.is-pick::before {
+    content: 'A_Media Pick';
     position: absolute;
-    top: 10px;
-    left: 10px;
-    background: var(--card-button-bg);
-    color: var(--card-button-fg);
-    font-size: 0.68rem;
+    top: 4px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--surface-color);
+    color: var(--card-border-color);
+    font-size: 0.7rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    padding: 3px 8px;
-    border-radius: 4px;
-    z-index: 3;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 4px solid var(--card-border-color);
+    z-index: 5;
     pointer-events: none;
+    white-space: nowrap;
 }
 
 .overlay-content {
@@ -173,7 +177,7 @@
 
 .add-to-cart, .wishlist, .share {
     background: var(--card-button-bg);
-    color: var(--card-button-fg);
+    color: var(--surface-color);
     border: none;
     border-radius: 8px;
     font-size: 0.9rem;

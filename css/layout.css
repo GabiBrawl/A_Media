@@ -78,6 +78,10 @@ main {
     overflow: visible;
 }
 
+.card-wrapper.has-pick {
+    padding-top: 10px;
+}
+
 .empty-state {
     margin-top: var(--spacing-lg);
     color: var(--dark-color);
@@ -171,7 +175,7 @@ main {
         left: 50%;
         bottom: calc(var(--spacing-md) + env(safe-area-inset-bottom));
         transform: translateX(-50%);
-        width: min(420px, calc(100% - (var(--spacing-md) * 2)));
+        width: min(320px, calc(100% - (var(--spacing-lg) * 2)));
         z-index: 260;
         background: transparent;
         border: none;
@@ -188,7 +192,7 @@ main {
         padding: 12px 16px;
         border: 1px solid rgba(102, 44, 57, 0.45);
         border-radius: 999px;
-        background: var(--dark-color);
+        background: rgba(102, 44, 57, 0.78);
         color: var(--surface-color);
         font-size: 0.95rem;
         font-weight: 700;
@@ -200,6 +204,8 @@ main {
         justify-content: center;
         gap: 8px;
         transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+        -webkit-backdrop-filter: blur(10px) saturate(1.1);
+        backdrop-filter: blur(10px) saturate(1.1);
     }
 
     .mobile-filters-toggle::before {

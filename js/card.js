@@ -229,6 +229,9 @@ function renderCards(productList, container) {
     productList.forEach((product) => {
         const wrapper = document.createElement('div');
         wrapper.className = 'card-wrapper';
+        if (product.pick) {
+            wrapper.classList.add('has-pick');
+        }
         wrapper.appendChild(createProductCard(product));
         container.appendChild(wrapper);
     });
@@ -267,6 +270,9 @@ function renderCategorySections(categoryEntries, container) {
         entry.products.forEach((product) => {
             const wrapper = document.createElement('div');
             wrapper.className = 'card-wrapper';
+            if (product.pick) {
+                wrapper.classList.add('has-pick');
+            }
             wrapper.appendChild(createProductCard(product));
             row.appendChild(wrapper);
         });
